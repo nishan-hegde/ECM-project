@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "90905205759",
+    "project_id": "election-57ab0",
+    "storage_bucket": "election-57ab0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90905205759:android:cde587b3a3648b5b5965ca",
+        "android_client_info": {
+          "package_name": "com.example.election"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChICY4CYai0iFZxAibskcud2L0RT8X3Tc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
