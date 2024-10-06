@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/primarye"
+        android:backgroundTint="@color/primary"
         android:text="Go to Candidate"
         android:textColor="@android:color/white"
         tools:layout_editor_absoluteX="130dp"
