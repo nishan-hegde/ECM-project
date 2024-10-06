@@ -10,20 +10,21 @@ android:backgroundTint="@color/white"
 tools:context=".MainActivity">
 
 <!-- Back Button Section -->
-<ImageButton
-    android:id="@+id/backButton"
-    android:layout_width="40dp"
-    android:layout_height="40dp"
-    android:layout_marginTop="16dp"
-    android:layout_marginStart="16dp"
-    android:background="@android:color/transparent"
-    android:contentDescription="Back"
-    android:src="@drawable/back"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintStart_toStartOf="parent" />
 
-<!-- Candidate Signup Page Layout -->
-<LinearLayout
+    <!-- Candidate Signup Page Layout -->
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="55dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Back"
+        android:src="@drawable/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
     android:id="@+id/candidate_signup_page"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"

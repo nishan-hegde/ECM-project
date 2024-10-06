@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Election</string>
+    <string name="app_name">ECM</string>
     <!-- Define a custom style for buttons -->
     <style name="BorderButton">
         <item name="android:layout_width">match_parent</item>
@@ -9,6 +9,7 @@
         <item name="android:textColor">@color/primary</item>
         <item name="android:layout_marginTop">10dp</item>
     </style>
+
     <style name="SolidButton">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -17,6 +18,7 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:layout_marginTop">10dp</item>
     </style>
+
     <style name="gray_border_input_fields">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>

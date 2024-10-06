@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/white"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/candidate_signup_page"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/header_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/ECM_TEXT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="45sp"
+                android:textStyle="bold"
+                android:textColor="@color/secondary"
+                android:text="ECM" />
+
+            <TextView
+                android:id="@+id/ECM_FULLFORM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="ECM_fullform" />
+        </LinearLayout>
+
+        <!-- First row of buttons -->
+        <LinearLayout
+            android:id="@+id/header_title2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/candidate_profile"
+                android:layout_width="125dp"
+                android:layout_height="100dp"
+                android:text="Profile"
+                android:backgroundTint="@color/secondary" />
+
+            <Button
+                android:id="@+id/candidate_result"
+                android:layout_width="125dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20dp"
+                android:text="Result"
+                android:backgroundTint="@color/secondary" />
+        </LinearLayout>
+
+        <!-- Second row of buttons -->
+        <LinearLayout
+            android:id="@+id/header_title3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/candidate_candidates"
+                android:layout_width="125dp"
+                android:layout_height="100dp"
+                android:text="Candidates"
+                android:backgroundTint="@color/secondary" />
+
+            <Button
+                android:id="@+id/candidate_election_create"
+                android:layout_width="125dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20dp"
+                android:text="Election \nCreate"
+                android:backgroundTint="@color/secondary" />
+        </LinearLayout>
+
+        <!-- New vertical buttons -->
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/election"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Election"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/candidate_signup_page"
+        app:layout_constraintVertical_bias="0.094" />
+
+    <Button
+        android:id="@+id/another_button"
+        android:layout_width="339dp"
+        android:layout_height="96dp"
+        android:backgroundTint="@color/secondary"
+        android:text="Supporter Interaction"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="440dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/new_button"
+        android:layout_width="338dp"
+        android:layout_height="90dp"
+        android:backgroundTint="@color/secondary"
+        android:text="Campaign management"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="556dp"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
