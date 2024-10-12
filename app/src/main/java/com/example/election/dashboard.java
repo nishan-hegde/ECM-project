@@ -1,7 +1,6 @@
 package com.example.election;
 
-
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,23 +10,31 @@ public class dashboard extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard); // Change to your XML layout name
+        setContentView(R.layout.activity_dashboard);
 
-        Button candidateProfile = findViewById(R.id.candidate_profile);
-        Button candidateResult = findViewById(R.id.candidate_result);
-        Button candidateCandidates = findViewById(R.id.candidate_candidates);
-        Button candidateElectionCreate = findViewById(R.id.candidate_election_create);
-        Button anotherButton = findViewById(R.id.another_button);
-        Button newButton = findViewById(R.id.new_button);
+        Button candidateProfile = findViewById(R.id.button_profile);
+        Button candidateResult = findViewById(R.id.button_results);
+        Button candidateCandidates = findViewById(R.id.button_candidates);
+        Button candidateElectionCreate = findViewById(R.id.button_help);
+        Button anotherButton = findViewById(R.id.button_campaign_management);
+        Button newButton = findViewById(R.id.button_supporter_interaction);
+
+        // Navigate to Profilec activity
+        candidateProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(dashboard.this, profilec.class);
+                startActivity(intent);
+            }
+        });
 
         View.OnClickListener exitAppListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish(); // Exit the app
+                finish(); // Exit the app for the other buttons
             }
         };
 
-        candidateProfile.setOnClickListener(exitAppListener);
         candidateResult.setOnClickListener(exitAppListener);
         candidateCandidates.setOnClickListener(exitAppListener);
         candidateElectionCreate.setOnClickListener(exitAppListener);
@@ -35,4 +42,3 @@ public class dashboard extends AppCompatActivity {
         newButton.setOnClickListener(exitAppListener);
     }
 }
-
