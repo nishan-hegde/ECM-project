@@ -43,14 +43,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Username and Register Number -->
-    <de.hdodenhof.circleimageview.CircleImageView
+
+    <ImageView
         android:id="@+id/profile_image"
         android:layout_width="140dp"
-        android:layout_height="127dp"
+        android:layout_height="140dp"
         android:layout_marginTop="8dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/circle_shape"
-        app:civ_border_color="@color/primary"
-        app:civ_border_width="2dp"
+        android:background="@drawable/circle_shape"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/profile_header" />

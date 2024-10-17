@@ -116,7 +116,7 @@
             android:textColor="@color/primary"
             android:textStyle="normal"
             android:textSize="20sp"
-            android:text="forgot_password"
+            android:text="forgot password"
             android:layout_gravity="end"
             android:paddingRight="10dp"
             android:layout_marginTop="10dp" />

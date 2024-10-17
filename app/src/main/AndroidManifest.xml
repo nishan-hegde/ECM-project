@@ -15,6 +15,21 @@
         android:theme="@style/Theme.Election"
         tools:targetApi="31">
         <activity
+            android:name=".candidate_list"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".candidateaccess"
+            android:exported="false" />
+        <activity
+            android:name=".candidatelist"
+            android:exported="false" />
+        <activity
             android:name=".profilec"
             android:exported="false" />
         <activity

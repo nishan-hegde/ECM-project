@@ -75,9 +75,9 @@
         android:layout_below="@id/btn_login"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:background="@drawable/btn1"
+        android:backgroundTint="@color/primary"
         android:text="Sign up"
-        android:textColor="@color/primary"
+        android:textColor="@color/white"
         android:textSize="16sp" />
 </RelativeLayout>
 
