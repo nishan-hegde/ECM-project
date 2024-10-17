@@ -14,7 +14,7 @@ public class dashboard extends AppCompatActivity {
 
         Button candidateProfile = findViewById(R.id.button_profile);
         Button candidateResult = findViewById(R.id.button_results);
-        Button candidateCandidates = findViewById(R.id.button_candidates);
+        Button candidateCandidates = findViewById(R.id.button_candidates); // Existing button
         Button candidateElectionCreate = findViewById(R.id.button_help);
         Button anotherButton = findViewById(R.id.button_campaign_management);
         Button newButton = findViewById(R.id.button_supporter_interaction);
@@ -28,6 +28,15 @@ public class dashboard extends AppCompatActivity {
             }
         });
 
+        // Navigate to Candidates List activity
+        candidateCandidates.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(dashboard.this, candidatelist.class); // Navigate to candidatelist
+                startActivity(intent);
+            }
+        });
+
         View.OnClickListener exitAppListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,7 +45,6 @@ public class dashboard extends AppCompatActivity {
         };
 
         candidateResult.setOnClickListener(exitAppListener);
-        candidateCandidates.setOnClickListener(exitAppListener);
         candidateElectionCreate.setOnClickListener(exitAppListener);
         anotherButton.setOnClickListener(exitAppListener);
         newButton.setOnClickListener(exitAppListener);
