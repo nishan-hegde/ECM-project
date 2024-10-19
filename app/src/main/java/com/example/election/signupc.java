@@ -24,7 +24,6 @@ public class signupc extends AppCompatActivity {
     private ImageButton backButton;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

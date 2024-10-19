@@ -10,15 +10,18 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.bumptech.glide.Glide; // Import Glide for image loading
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -28,16 +31,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class profilec extends AppCompatActivity {
-
     private static final int PICK_IMAGE_REQUEST = 1;
-
     private EditText phoneNumber, courseField;
     private Spinner deptSpinner, sectionSpinner, semSpinner, candidateSpinner;
     private Button logoutButton;
     private ImageButton backButton;
     private ImageView profileImageView; // Added for image selection
     private Uri imageUri; // Uri to hold selected image
-
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
     private StorageReference mStorageRef; // Reference to Firebase Storage
@@ -98,7 +98,6 @@ public class profilec extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             imageUri = data.getData();
             profileImageView.setImageURI(imageUri); // Display the selected image
@@ -115,12 +114,20 @@ public class profilec extends AppCompatActivity {
                     // Populate the profile fields with user data
                     phoneNumber.setText(user.phone);
                     courseField.setText(user.course);
-
                     // Set spinner selection by matching text values
                     setSpinnerSelectionByValue(deptSpinner, user.dept);
                     setSpinnerSelectionByValue(sectionSpinner, user.section);
                     setSpinnerSelectionByValue(semSpinner, user.sem);
                     setSpinnerSelectionByValue(candidateSpinner, user.candidate);
+
+                    // Check if imageUrl is not null or empty, then load the image
+                    if (!TextUtils.isEmpty(user.imageUrl)) {
+                        // Load the image into profileImageView using Glide
+                        Glide.with(profilec.this)
+                                .load(user.imageUrl)
+                                .placeholder(R.drawable.circle_shape) // Optional: default image
+                                .into(profileImageView);
+                    }
                 } else {
                     Toast.makeText(profilec.this, "User profile not found!", Toast.LENGTH_SHORT).show();
                 }
@@ -136,7 +143,6 @@ public class profilec extends AppCompatActivity {
     // Upload image to Firebase Storage and then save profile data
     private void uploadImageAndSaveProfile(String userId) {
         StorageReference fileReference = mStorageRef.child(userId + ".jpg"); // Save image with userId as filename
-
         fileReference.putFile(imageUri)
                 .addOnSuccessListener(taskSnapshot -> fileReference.getDownloadUrl().addOnSuccessListener(uri -> {
                     String imageUrl = uri.toString(); // Get URL of uploaded image
@@ -149,7 +155,6 @@ public class profilec extends AppCompatActivity {
     private void saveProfileWithImage(String userId, String imageUrl) {
         String userPhone = phoneNumber.getText().toString().trim();
         String userCourse = courseField.getText().toString().trim();
-
         // Fetch text values from Spinners instead of positions
         String userDept = deptSpinner.getSelectedItem().toString();
         String userSection = sectionSpinner.getSelectedItem().toString();
@@ -186,10 +191,8 @@ public class profilec extends AppCompatActivity {
 
     // Save and logout (if no image is selected)
     private void updateProfileAndLogout(String userId) {
-        // Same logic as before, just updates profile and logs out
         String userPhone = phoneNumber.getText().toString().trim();
         String userCourse = courseField.getText().toString().trim();
-
         String userDept = deptSpinner.getSelectedItem().toString();
         String userSection = sectionSpinner.getSelectedItem().toString();
         String userSem = semSpinner.getSelectedItem().toString();

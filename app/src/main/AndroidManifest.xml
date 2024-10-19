@@ -24,9 +24,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".candidatelist"
-            android:exported="false" />
-        <activity
             android:name=".profilec"
             android:exported="false" />
         <activity

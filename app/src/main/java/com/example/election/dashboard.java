@@ -28,14 +28,6 @@ public class dashboard extends AppCompatActivity {
             }
         });
 
-        // Navigate to Candidates List activity
-        candidateCandidates.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(dashboard.this, candidatelist.class); // Navigate to candidatelist
-                startActivity(intent);
-            }
-        });
 
         View.OnClickListener exitAppListener = new View.OnClickListener() {
             @Override
