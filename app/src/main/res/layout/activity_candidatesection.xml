@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/white">
+
+    <!-- ECM Title Section -->
+    <TextView
+        android:id="@+id/ECM_TITLE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ECM"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/ECM_FULL_FORM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Election Commission of Manipal"
+        android:textSize="18sp"
+        android:layout_below="@id/ECM_TITLE"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:gravity="center" />
+
+    <!-- Results Text -->
+    <TextView
+        android:id="@+id/resultsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Results"
+        android:textSize="18sp"
+        android:layout_below="@id/ECM_FULL_FORM"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Button 1: Class A -->
+
+    <!-- Button 2: Class B -->
+
+    <Button
+        android:id="@+id/btnClassA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/resultsLabel"
+        android:layout_marginTop="116dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:text="Class A - Class Representative"
+        android:textColor="@android:color/black" />
+
+    <Button
+        android:id="@+id/btnClassB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Class B - Class Representative"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:textColor="@android:color/black"
+        android:layout_below="@id/btnClassA"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Button 3: Class C -->
+    <Button
+        android:id="@+id/btnClassC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Class C - Class Representative"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:textColor="@android:color/black"
+        android:layout_below="@id/btnClassB" />
+
+</RelativeLayout>

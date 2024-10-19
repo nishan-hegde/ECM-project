@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:elevation="4dp">
+
+    <!-- Title and Back button section -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Background color change and layout for the card content -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_blue_light"
+                android:orientation="horizontal"
+                android:padding="16dp"> <!-- Background color -->
+
+                <!-- Candidate Image using CircleImageView -->
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/userImage"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/vote" /> <!-- Set candidate image -->
+
+                <!-- Candidate Name and Section -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"> <!-- Layout weight to fill space -->
+
+                    <!-- Candidate Name -->
+                    <TextView
+                        android:id="@+id/userName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Candidate Name"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" /> <!-- Example name -->
+
+                    <!-- Candidate Section -->
+                    <TextView
+                        android:id="@+id/userSection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Section or Position"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" /> <!-- Example section -->
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    <!-- Candidate List section -->
+</androidx.cardview.widget.CardView>

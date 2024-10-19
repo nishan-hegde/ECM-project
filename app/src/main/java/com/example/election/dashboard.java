@@ -11,7 +11,6 @@ public class dashboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-
         Button candidateProfile = findViewById(R.id.button_profile);
         Button candidateResult = findViewById(R.id.button_results);
         Button candidateCandidates = findViewById(R.id.button_candidates); // Existing button
@@ -27,8 +26,14 @@ public class dashboard extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
+        // Navigate to Profilec activity
+        candidateCandidates.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(dashboard.this, candidatelistv.class);
+                startActivity(intent);
+            }
+        });
         View.OnClickListener exitAppListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
