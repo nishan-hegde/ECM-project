@@ -62,5 +62,10 @@
         <item>False</item>
     </string-array>
 
+        <string name="candidate_help_title">Candidate Help and Support</string>
+        <string name="candidate_help_subtitle">Find quick answers to questions about voting for candidates.</string>
+        <string name="back_button_desc">Back</string>
+        <string name="contact_phone">Phone: 7066062958</string>
+        <string name="contact_email">Email: pawardevelops@gmail.com</string>
 
 </resources>
